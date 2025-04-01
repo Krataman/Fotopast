@@ -74,15 +74,14 @@ sudo python3 sens.py
    - Po připojení k zařízení můžete spravovat snímky a videa prostřednictvím webového rozhran Filebrowseru.
 
    - Pro přístup k Filebrowseru otevřete webový prohlížeč a zadejte IP adresu Raspberry Pi.
-   - Přihlašovací údaje jsou admin/admin.
+   - Přihlašovací údaje jsou **admin/admin**.
 
 4. **Testování a ladění**
 
    - Pro testování aktivujte pohyb před PIR senzorem a ověřte, zda fotopast správně reaguje.
    - Pokud je to nutné, můžete upravit nastavení detekce pohybu nebo upravit intervaly mezi snímky.
   
-
-
+**Autor: [Denis Kratochvíl]**
 
 
 
