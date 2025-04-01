@@ -1,7 +1,7 @@
 # Projekt: Fotopast
 
 ## 1. Úvod
-Wildlife kamera (fotopast) je zařízení určené k automatickému zaznamenávání pohybu v přírodě. Po připojení napájení se zařízení automaticky spustí a začne detekovat pohyb pomocí kamery a senzorů. Po detekci pohybu uloží snímky nebo video na lokální úložiště.
+Fotopast je zařízení určené k automatickému zaznamenávání pohybu v přírodě. Po připojení napájení se zařízení automaticky spustí a začne detekovat pohyb pomocí kamery a senzorů. Po detekci pohybu uloží snímky nebo video na lokální úložiště.
 
 ## 2. Použité technologie
 - **Hardware:** Raspberry Pi 5 (8GB RAM), kamera, PIR senzor, microSD karta, napájecí modul
@@ -12,12 +12,12 @@ Wildlife kamera (fotopast) je zařízení určené k automatickému zaznamenáv�
 ## 3. Funkčnost
 - Automatické spuštění po připojení napájení
 - Detekce pohybu pomocí PIR senzoru a OpenCV
-- Ukládání snímků a videí
-- Možnost vzdálené správy prostřednictvím webového rozhraní Filebrowser
+- Ukládání snímků
+- Možnost vzdálené správy prostřednictvím webového rozhraní Filebrowser služby
 
 ## 4. GitHub repo
 Repozitář obsahuje zdrojový kód, instalační postup a uživatelskou dokumentaci.
-**Odkaz:** [GitHub Repository](https://github.com/example/fotopast)
+**Odkaz:** [GitHub Repository](https://github.com/Krataman/Fotopast)
 
 ## 5. Testování
 Projekt byl otestován pěti uživateli, kteří poskytli zpětnou vazbu prostřednictvím GitHub Issues. Veškeré připomínky byly zapracovány do finální verze.
@@ -25,7 +25,7 @@ Projekt byl otestován pěti uživateli, kteří poskytli zpětnou vazbu prostř
 ## 6. Dokumentace
 
 ### 6.1 Technická dokumentace
-Fotopast je postavena na platformě Raspberry Pi 5 s 8 GB RAM, což zajišťuje dostatečný výkon pro zpracování obrazových dat v reálném čase. Kamera je připojena k Raspberry Pi a snímky/video jsou zachyceny při detekci pohybu pomocí PIR senzoru.
+Fotopast je postavena na platformě Raspberry Pi 5 s 8 GB RAM, což zajišťuje dostatečný výkon pro zpracování obrazových dat v reálném čase. Kamera je připojena k Raspberry Pi a snímky jsou zachyceny při detekci pohybu pomocí PIR senzoru.
 
 Software je napsán v Pythonu a využívá knihovnu OpenCV pro detekci pohybu. Používá také nástroj `v4l2-ctl` pro správu kamery. Po detekci pohybu systém automaticky uloží snímky a/nebo video na microSD kartu.
 
@@ -40,12 +40,13 @@ Pro správu souborů a konfiguraci zařízení je použito webové rozhraní **F
    - Připojte kameru a PIR senzor k Raspberry Pi.
 
 2. **Připojení k síti**  
-   - Zařízení se připojí k místní síti pomocí Ethernetu nebo Wi-Fi.
+   - Zařízení se připojí k místní síti pomocí Ethernetu.
    - Ujistěte se, že máte přístup k zařízení přes SSH.
 
 3. **Správa pomocí Filebrowser**  
    - Po nastavení připojení můžete přistupovat k zařízení prostřednictvím webového rozhraní **Filebrowser**.
    - Přihlaste se do Filebrowser pomocí webového prohlížeče na IP adrese Raspberry Pi.
+   - Přihlašovací ůdaje pro Filebrowser jsou **admin/admin**
    - Pomocí rozhraní můžete prohlížet, mazat nebo stahovat pořízené snímky a videa.
 
 4. **Testování a ladění**  
