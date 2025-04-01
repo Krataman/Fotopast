@@ -30,5 +30,5 @@ The Wildlife Camera (Fotopast) is an automatic motion-detection camera for natur
 
 ---
 
-**Autor:** [Jméno a Příjmení]
+**Autor:** [Denis Kratochvíl]
 
