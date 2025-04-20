@@ -1,92 +1,84 @@
 # Projekt: Fotopast
 
 ## 1. Úvod
-Fotopast je zařízení určené k automatickému zaznamenávání pohybu v přírodě. Po připojení napájení se zařízení automaticky spustí a začne detekovat pohyb pomocí kamery a senzorů. Po detekci pohybu uloží snímky nebo video na lokální úložiště.
+
+Fotopast je zařízení určené k automatickému zaznamenávání pohybu v přírodě. Po připojení napájení se zařízení automaticky spustí a začne detekovat pohyb pomocí kamery a senzorů. Po detekci pohybu pořídí snímek, který se automaticky odešle na vzdálený server a je dostupný přes webové rozhraní.
 
 ## 2. Použité technologie
-- **Hardware:** Raspberry Pi 5 (8GB RAM), kamera, PIR senzor, microSD karta, napájecí modul
-- **Software:** Python, OpenCV, v4l2-ctl, systémové služby pro automatické spuštění
-- **Úložiště:** Lokální SD karta
-- **Správa:** SSH přístup pro konfiguraci, **Filebrowser** pro webové rozhraní pro správu pořízených medií (mazání, stahování atd.)
+
+- **Hardware:** Raspberry Pi 5 (8GB RAM), kamera, PIR senzor, microSD karta, napájecí modul  
+- **Software:** Python, OpenCV, v4l2-ctl, systémové služby pro automatické spuštění  
+- **Úložiště:** Vzdálený server (SFTP)  
+- **Správa:** SSH přístup pro konfiguraci, webové rozhraní na doméně [fotopast.2007.cz](https://fotopast.2007.cz) pro správu pořízených snímků
 
 ## 3. Funkčnost
-Fotopast je navržena tak, aby vykonávala následující funkce:
 
-- **Automatické spuštění po připojení napájení:** Zařízení se automaticky spustí po připojení napájení a začne okamžitě detekovat pohyb.
-- **Detekce pohybu pomocí PIR senzoru:** PIR senzor je aktivován, když je detekován pohyb v jeho okolí, což následně spustí kameru pro pořízení snímků.
-- **Ukládání snímků:** Snímky pořízené kamerou jsou uloženy na SD kartu v zařízení. Snímky jsou také rotovány o 180 stupňů pro zajištění správného zobrazení.
-- **Možnost vzdálené správy prostřednictvím webového rozhraní Filebrowser:** Uživatelé mohou vzdáleně přistupovat k pořízeným snímkům a videím, prohlížet je, mazat nebo stahovat pomocí webového rozhraní **Filebrowser**.
+- **Automatické spuštění:** Po připojení napájení se zařízení automaticky spustí a začne detekovat pohyb.
+- **Detekce pohybu:** PIR senzor detekuje pohyb v okolí a aktivuje pořízení snímku.
+- **Pořízení a úprava snímků:** Kamera pořídí snímek, který je rotován o 180° pro správné zobrazení.
+- **Nahrávání snímků:** Snímky jsou pomocí SFTP automaticky nahrávány na vzdálený server.
+- **Webová správa:** Nahrané soubory jsou přístupné přes webové rozhraní na [fotopast.2007.cz](https://fotopast.2007.cz), kde lze soubory prohlížet, stahovat a mazat.
 
-## 4. Správa pomocí Filebrowseru
-Po nastavení a spuštění zařízení můžete spravovat pořízené snímky a videa pomocí webového rozhraní **Filebrowser**. Tento nástroj umožňuje:
+## 4. Webové rozhraní
 
-- **Prohlížení souborů:** Uživatelé mohou prohlížet pořízené snímky a videa, které byly uloženy na SD kartě Raspberry Pi.
-- **Mazání souborů:** Pokud chcete uvolnit místo na SD kartě, můžete pomocí Filebrowseru mazat staré soubory.
-- **Stahování souborů:** Snímky a videa lze stáhnout na váš počítač nebo jiná zařízení pro zálohu nebo další použití.
+Po nahrání snímků na server jsou tyto dostupné přes webové rozhraní na adrese:
 
-### Krok za krokem:
-1. **Přístup k Filebrowseru**
-   - Otevřete webový prohlížeč a zadejte IP adresu Raspberry Pi.
-   - V přihlašovacím okně použijte přihlašovací údaje:
-     - **Uživatelské jméno:** admin
-     - **Heslo:** admin
-2. **Správa souborů**
-   - Jakmile se přihlásíte, budete mít přístup k souborům uloženým na SD kartě.
-   - Klikněte na složky pro prohlížení snímků a videí.
-   - Použijte tlačítka pro mazání nebo stahování souborů podle potřeby.
+👉 [https://fotopast.2007.cz](https://fotopast.2007.cz)
 
-## 5. GitHub repo
-Repozitář obsahuje zdrojový kód, instalační postup a uživatelskou dokumentaci.
-**Odkaz:** [GitHub Repository](https://github.com/Krataman/Fotopast)
+### Funkce rozhraní:
+
+- **Prohlížení:** Náhled a prohlížení jednotlivých snímků.
+- **Mazání:** Možnost odstraňování nepotřebných snímků.
+- **Stahování:** Stahování jednotlivých nebo více snímků.
+
+### Přístup:
+
+1. Otevřete webový prohlížeč a přejděte na [https://fotopast.2007.cz](https://fotopast.2007.cz)  
+2. Přihlaste se pomocí přístupových údajů  
+3. Spravujte soubory dle potřeby
+
+## 5. GitHub repozitář
+
+Repozitář obsahuje zdrojový kód, instalační postup a dokumentaci k projektu:
+
+🔗 [https://github.com/Krataman/Fotopast](https://github.com/Krataman/Fotopast)
 
 ## 6. Testování
-Projekt byl otestován pěti uživateli. Uživatelé poskytli zpětnou vazbu prostřednictvím GitHub Issues, která byla následně zapracována do finální verze projektu. Testování zahrnovalo:
-- Ověření správnosti detekce pohybu.
-- Testování kvality pořízených snímků a jejich rotace.
-- Zajištění správné funkčnosti webového rozhraní pro správu souborů.
+
+Projekt byl testován pěti uživateli. Testování zahrnovalo:
+
+- Detekci pohybu a spouštění kamery
+- Kvalitu a správnou orientaci snímků
+- Ověření správného fungování nahrávání na server
+- Test použitelnosti webového rozhraní
+- Zpětná vazba byla shromážděna přes GitHub Issues a byla zapracována
 
 ## 7. Dokumentace
 
 ### 7.1 Technická dokumentace
-Fotopast je postavena na Raspberry Pi 5 (8GB RAM), což poskytuje dostatečný výkon pro zpracování obrazových dat v reálném čase. Pro detekci pohybu je použit **PIR senzor**, pro správu kamery **picamera2** a pro manipulaci s obrazovými soubory je použit **PIL** (Python Imaging Library).
 
-- **PIR senzor:** Detekuje pohyb a spouští pořízení snímku pomocí kamery.
-- **Kamera (Picamera2):** Používá se pro pořízení snímků a videí.
-- **Snímky:** Jsou ukládány na SD kartu, přičemž RAW snímky jsou po pořízení rotovány o 180 stupňů pro správné zobrazení.
-
-Pro vzdálenou správu je použito webové rozhraní **Filebrowser**, které poskytuje uživatelům přístup k pořízeným snímkům a videím. Toto rozhraní umožňuje prohlížení, stahování a mazání souborů.
+- **PIR senzor:** Detekuje pohyb a spouští kameru.
+- **Kamera (Picamera2):** Pořizuje snímky, které jsou následně upraveny pomocí knihovny PIL (rotace).
+- **SFTP přenos:** Automatizovaný skript přenáší snímky na server.
+- **Webová správa:** Snímky jsou ihned dostupné k prohlížení a správě na webu.
 
 ### 7.2 Uživatelská příručka
+
 #### Instalace a konfigurace
+
 1. **Připojení zařízení**
-   - Připojte Raspberry Pi k napájení.
-   - Připojte kameru a PIR senzor k Raspberry Pi.
-   - Připojte Raspberry Pi k místní síti pomocí Ethernetu.
+   - Připojte napájení, kameru a PIR senzor k Raspberry Pi
+   - Připojte zařízení do sítě pomocí Ethernetu nebo Wi-Fi
 
-2. **Spuštění skriptu pro fotopast Po nainstalování potřebných knihoven můžete spustit skript,
-   který zajistí detekci pohybu a pořízení snímků:**
+2. **Automatický start**
+   - Při spuštění zařízení se automaticky spustí služba pro detekci pohybu
+   - Pořízené snímky se automaticky odesílají na server přes SFTP
 
-```bash
-sudo python3 sens.py
-```
+3. **Správa snímků**
+   - Otevřete [https://fotopast.2007.cz](https://fotopast.2007.cz)
+   - Přihlaste se a spravujte soubory (prohlížení, mazání, stahování)
 
-3. **Správa pomocí Filebrowser**
-   - Po připojení k zařízení můžete spravovat snímky a videa prostřednictvím webového rozhran Filebrowseru.
+---
 
-   - Pro přístup k Filebrowseru otevřete webový prohlížeč a zadejte IP adresu Raspberry Pi.
-   - Přihlašovací údaje jsou **admin/admin**.
-
-4. **Testování a ladění**
-
-   - Pro testování aktivujte pohyb před PIR senzorem a ověřte, zda fotopast správně reaguje.
-   - Pokud je to nutné, můžete upravit nastavení detekce pohybu nebo upravit intervaly mezi snímky.
-  
-**Autor: [Denis Kratochvíl]**
-
-
-
-
-
-
-
-
+> 🛠️ Projekt vytvořen v rámci školní technické praxe.  
+> 📷 Pro více informací nebo úpravy navštivte repozitář na GitHubu.
