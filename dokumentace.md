@@ -16,7 +16,7 @@ Fotopast je zařízení určené k automatickému zaznamenávání pohybu v př�
 - **Automatické spuštění:** Po připojení napájení se zařízení automaticky spustí a začne detekovat pohyb.
 - **Detekce pohybu:** PIR senzor detekuje pohyb v okolí a aktivuje pořízení snímku.
 - **Pořízení a úprava snímků:** Kamera pořídí snímek, který je rotován o 180° pro správné zobrazení.
-- **Nahrávání snímků:** Snímky jsou pomocí SFTP automaticky nahrávány na vzdálený server.
+- **Nahrávání snímků:** Snímky jsou pomocí SFTP automaticky nahrávány na vzdálený server a pomocí autentizace public key je přenos a přístup na server zabecpečen.
 - **Webová správa:** Nahrané soubory jsou přístupné přes webové rozhraní na [fotopast.2007.cz](https://fotopast.2007.cz), kde lze soubory prohlížet, stahovat a mazat.
 
 ## 4. Webové rozhraní
