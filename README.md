@@ -1,4 +1,4 @@
-# Projekt: Fotopast
+# Uživatelská dokumentace – Fotopast
 
 ## 1. Úvod
 
