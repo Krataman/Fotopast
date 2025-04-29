@@ -46,3 +46,13 @@ Cílem projektu bylo navrhnout a vytvořit fotopast – zařízení schopné aut
 - **Zpoždění při pořízení snímků:** Kvůli inicializační době kamery není možné garantovat okamžité zachycení prvního pohybu.
 - **Napájení:** Projekt v aktuální podobě nepočítá s mobilním (bateriovým) napájením.
 
+## Závěr
+Projekt **Fotopast** úspěšně splnil stanovené cíle. Zařízení je schopno po zapnutí automaticky detekovat pohyb a pořizovat snímky, které následně bezpečně nahrává přes SFTP na vlastní server. Uživatel má k těmto snímkům přístup přes webové rozhraní Filebrowser, dostupné na adrese [https://fotopast.2007.cz](https://fotopast.2007.cz).
+
+Při vývoji byla kladena důraz na spolehlivost, jednoduchost ovládání a snadnou dostupnost dat. Byly implementovány základní bezpečnostní mechanismy pro ochranu přístupu a přenosu dat.
+
+Díky zpětné vazbě od testerů bylo možné odstranit drobné chyby a doladit uživatelské prostředí. Projekt tak splňuje nejen technické požadavky, ale je i prakticky použitelný v reálném nasazení.
+
+Celkově hodnotím práci na projektu jako přínosnou – rozšířil jsem své znalosti v oblasti Linuxu, práce s kamerou na Raspberry Pi, webových technologií a síťové bezpečnosti.
+
+
