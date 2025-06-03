@@ -46,6 +46,34 @@ Cílem projektu bylo navrhnout a vytvořit fotopast – zařízení schopné aut
 - **Zpoždění při pořízení snímků:** Kvůli inicializační době kamery není možné garantovat okamžité zachycení prvního pohybu.
 - **Napájení:** Projekt v aktuální podobě nepočítá s mobilním (bateriovým) napájením.
 
+## 💰 Přehled nákladů
+
+| Položka                        | Cena (Kč)    | Povinná | Poznámka                                      |
+|-------------------------------|--------------|---------|-----------------------------------------------|
+| Raspberry Pi 5 (8 GB RAM)     | 2 200 Kč     | ✅ Ano  | Hlavní jednotka systému                        |
+| PIR senzor (pohybový)         | 50 Kč        | ✅ Ano  | Detekce pohybu                                 |
+| 3D tištěná krabička           | 50 Kč        | ✅ Ano  | Ochrana elektroniky, vlastní tisk              |
+| Kabeláž (Dupont, napájení)    | 10 Kč        | ✅ Ano  | Propojení mezi komponentami                    |
+| SD karta (32–64 GB)           | 150 Kč       | ✅ Ano  | Pro OS a ukládání dat                          |
+| Napájení (USB-C adaptér)      | 200 Kč       | ✅ Ano  | Stabilní napájení pro RPi                      |
+| Aktivní chladič               | 300 Kč       | ❌ Ne   | Doporučený, ale není nutný                     |
+
+---
+
+## 💸 Součet
+
+- **Povinné náklady celkem:** `2 200 + 50 + 50 + 10 + 150 + 200 = 2 660 Kč`
+- **Volitelné náklady (chladič):** `300 Kč`
+- **Celkové náklady (včetně chladiče):** `2 960 Kč`
+
+---
+
+## 📝 Poznámky
+
+- Chladič není nezbytný, ale při trvalém běhu RPi 5 ho velmi doporučuji – přehřívá se rád.
+- Ceny jsou orientační a mohou se lišit dle dodavatele.
+- Do rozvahy lze doplnit i **nepřímé náklady**, např. čas strávený vývojem nebo provoz serveru, pokud je v rámci projektu.
+---
 ## Závěr
 Projekt **Fotopast** úspěšně splnil stanovené cíle. Zařízení je schopno po zapnutí automaticky detekovat pohyb a pořizovat snímky, které následně bezpečně nahrává přes SFTP na vlastní server. Uživatel má k těmto snímkům přístup přes webové rozhraní Filebrowser, dostupné na adrese [https://fotopast.2007.cz](https://fotopast.2007.cz).
 
