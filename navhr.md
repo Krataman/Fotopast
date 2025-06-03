@@ -1,6 +1,6 @@
 # Postup návrhu – Fotopast
 
-## 1. Cíl projektu
+## 1. Cíl projektu (Anotace)
 Cílem projektu bylo navrhnout a vytvořit fotopast – zařízení schopné automaticky pořizovat snímky v přírodě při detekci pohybu. Zařízení musí fungovat autonomně, přenášet pořízené snímky na vzdálený server a umožnit jejich správu přes webové rozhraní.
 
 ## 2. Funkční požadavky
